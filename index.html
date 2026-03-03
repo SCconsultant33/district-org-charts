@@ -243,13 +243,11 @@
 
     const schoolCategory = (name) => {
       const lower = name.toLowerCase();
-
-      // Unique grade-band programs should remain yellow even if they include words like "academy".
-      if (lower.includes('junior high') || /\bk-12\b|\bk-8\b|\b5-6\b|\b3-8\b/.test(lower)) return 'unique';
+      if (lower.includes('alternative') || lower.includes('virtual') || lower.includes('academy') || lower.includes('programming')) return 'alternative';
       if (lower.includes('elementary')) return 'elementary';
       if (lower.includes('high school')) return 'high';
       if (lower.includes('middle school')) return 'middle';
-      if (lower.includes('alternative') || lower.includes('virtual') || lower.includes('academy') || lower.includes('programming')) return 'alternative';
+      if (lower.includes('junior high') || /\bk-12\b|\bk-8\b|\b5-6\b/.test(lower)) return 'unique';
       return 'unique';
     };
 
