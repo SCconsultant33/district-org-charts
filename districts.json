@@ -11,20 +11,23 @@
             "Chavez-Sheridan, Jackie",
             "Dalaire, Shelby",
             "Reyes, Melinda"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Avondale Middle School",
           "counselors": [
             "Amico, Jill",
             "Mathis-Echols, Sherisse"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "GATE Magnet School",
           "counselors": [
             "Henning, Colton"
-          ]
+          ],
+          "schoolType": "unique"
         }
       ]
     },
@@ -41,33 +44,38 @@
             "Sloan, Lauren",
             "Tye, Hillary",
             "Weiss, Robyn"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Norup International K-8",
           "counselors": [
             "Georgiou, Jaclyn",
             "Renberg, Holly"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Anderson Middle School",
           "counselors": [
             "Ng, Melissa",
             "Stone, Jessica"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Angell Elementary",
           "counselors": [
             "Chudler, Kezzie"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Rogers Elementary",
           "counselors": [
             "Harrison, Kiara"
-          ]
+          ],
+          "schoolType": "elementary"
         }
       ]
     },
@@ -80,49 +88,57 @@
           "name": "Beverly Elementary",
           "counselors": [
             "Bosley, Jennie"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Bingham Farms Elementary",
           "counselors": [
             "Landfair, Katie"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Greenfield Elementary",
           "counselors": [
             "TBD"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Harlan Elementary",
           "counselors": [
             "TBD"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Pembroke Elementary",
           "counselors": [
             "Mercer, Erin"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Pierce Elementary",
           "counselors": [
             "Geisler, Angela"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Quarton Elementary",
           "counselors": [
             "Arsenault, Kelsey"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "West Maple Elementary",
           "counselors": [
             "Francese, Sonja"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Groves High School",
@@ -132,7 +148,8 @@
             "Phillips, Lezah",
             "Starks, Felicia",
             "Wilson, Sherree"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Seaholm High School",
@@ -142,20 +159,23 @@
             "McWilliams, Nicole",
             "Vanderveen, Jennifer",
             "Wolf, Mackenzie"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Lincoln Street Alternative High School",
           "counselors": [
             "Erickson, Kristen"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Covington School 3-8",
           "counselors": [
             "Kohler, Karen",
             "Wagner, Jennifer"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Berkshire Middle School",
@@ -163,7 +183,8 @@
             "Battle, Angelina",
             "Gohl, Amanda",
             "Hardeman, Rhonda"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Derby Middle School",
@@ -171,7 +192,8 @@
             "Brown, Michelle",
             "Miller, Durand",
             "Withers, Jane"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -189,13 +211,15 @@
             "Klein, Shayna",
             "Merchant, Scott",
             "Midea, Tony"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Bowers Academy",
           "counselors": [
             "Hollyer-Madis, Laura"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "North Hills Middle School",
@@ -203,7 +227,8 @@
             "Dalgleish, Lauren",
             "Lynch, Joan",
             "Thelen, Sanja"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "South Hills Middle School",
@@ -211,7 +236,8 @@
             "Kesner, Laura",
             "Ash, Nicole",
             "Schlenker, Christina"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -225,25 +251,29 @@
           "counselors": [
             "Belluomo, Ryan",
             "Eland, Linda"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Brandon Middle School",
           "counselors": [
             "Crespo, Janiz"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Harvey-Swanson Elementary",
           "counselors": [
             "Rosenthal, Brenda"
-          ]
+          ],
+          "schoolType": "elementary"
         },
         {
           "name": "Oakwood Elementary",
           "counselors": [
             "Martin, Jill"
-          ]
+          ],
+          "schoolType": "elementary"
         }
       ]
     },
@@ -257,13 +287,15 @@
           "counselors": [
             "Holliday, LaKiesha",
             "Troszak, Joelle"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Clarenceville Middle School",
           "counselors": [
             "Westor, Jennifer"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -281,7 +313,8 @@
             "Graves, Jamie",
             "Krzciok, Julie",
             "McDaniel, Kim"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Clarkston Junior High School",
@@ -290,7 +323,8 @@
             "Horn, Jennifer",
             "Klein, Brian",
             "Shoemaker, Ryann"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Sashabaw Middle School",
@@ -299,19 +333,22 @@
             "Nardone, Lisa",
             "Orr, Taylor",
             "Toderan, Nicole"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Renaissance Alternative High School",
           "counselors": [
             "Youngerman, Stacey"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Clarkston Virtual Academy",
           "counselors": [
             "Rocho, Damon"
-          ]
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
@@ -325,13 +362,15 @@
           "counselors": [
             "Capaldi, Ashley",
             "Rice, Rebecca"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Clawson Middle School",
           "counselors": [
             "Reaume, Amy"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -345,27 +384,31 @@
           "counselors": [
             "Koch, Amanda",
             "Koppela-Sutherland, Stuart"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Power Middle School",
           "counselors": [
             "Levitan, Steven",
             "Peguese, Mackenzie"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Warner Middle School",
           "counselors": [
             "Katoula, Rania",
             "Lorion, Abby"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Farmington STEAM Academy K-8",
           "counselors": [
             "Richmond, Kari"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Farmington High School",
@@ -375,7 +418,8 @@
             "Knieper, Kristy",
             "Kowalski, Jennifer",
             "Perelli, Briana"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "North Farmington High School",
@@ -384,19 +428,22 @@
             "Jankelovitz, Joshua",
             "Schumake, India",
             "Towler, Kim"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Farmington Central Alternative High School",
           "counselors": [
             "Klotz, Katie"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Remote and Virtual Programming",
           "counselors": [
             "Case, Allison"
-          ]
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
@@ -410,33 +457,38 @@
           "counselors": [
             "Blessing-Nelson, Melissa",
             "Foster, Tammy"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "University High School",
           "counselors": [
             "Tootikian-Hachigian, Patricia"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "TCEC Alternative High School",
           "counselors": [
             "Malnofski, Heather",
             "Mirkes, Michelle"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Ferndale Middle School",
           "counselors": [
             "Castle, Katelyn",
             "Perry, Geralcine"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Ferndale Upper Elementary",
           "counselors": [
             "Gondek-Stanko, Jenelle"
-          ]
+          ],
+          "schoolType": "elementary"
         }
       ]
     },
@@ -450,19 +502,22 @@
           "counselors": [
             "Stewart, KeAira",
             "Winchester, Jason"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Invest Roosevelt Alternative High School",
           "counselors": [
             "Glasper, Christine"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Hazel Park Junior High School",
           "counselors": [
             "Barnett, Violida"
-          ]
+          ],
+          "schoolType": "unique"
         }
       ]
     },
@@ -477,20 +532,23 @@
             "Carl, Jenny",
             "Godman, Jody",
             "Redmer, Kim"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Holly Middle School",
           "counselors": [
             "Godoshian, Kristin",
             "Mattingly, Mark"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Broncho Virtual",
           "counselors": [
             "Price, Cheryl"
-          ]
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
@@ -505,7 +563,8 @@
             "Alfano, Jenny",
             "Carlson, Nicole",
             "Simms, Heather"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Milford High School",
@@ -513,21 +572,24 @@
             "Desenzio, Andy",
             "Ouellette, Julie",
             "Pryor, Gina"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Muir Middle School",
           "counselors": [
             "Flevaris, Anthony",
             "Mah, Jennifer"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "White Lake Middle School",
           "counselors": [
             "Roberts, Lindsay",
             "Sorvari, Cathy"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -541,20 +603,23 @@
           "counselors": [
             "Bernstein, Whitney",
             "Phelps, Alexandria"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "IA Okma",
           "counselors": [
             "Hanson, Kristin",
             "Healy, Caylan"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "IA West",
           "counselors": [
             "Piagentini, Brigid"
-          ]
+          ],
+          "schoolType": "unique"
         }
       ]
     },
@@ -573,25 +638,29 @@
             "Conner, Alicia",
             "Novak, Michele",
             "Parraghi, Natalie"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Oakview Middle School",
           "counselors": [
             "Hill, Angelina"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Scripps Middle School",
           "counselors": [
             "Tedder, Nancy"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Waldon Middle School",
           "counselors": [
             "Iwanski, Sarah"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -605,14 +674,16 @@
           "counselors": [
             "Alexander, Margie",
             "Stephenson, Mark"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Page Middle School",
           "counselors": [
             "George, Melanie",
             "Schelesky, Amy"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -625,7 +696,8 @@
           "name": "Madison High School",
           "counselors": [
             "Helchowski, Jennifer"
-          ]
+          ],
+          "schoolType": "high"
         }
       ]
     },
@@ -643,27 +715,31 @@
             "Kilgore, Kevin",
             "Leve, Lauren",
             "Tobis, Andrea"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Novi Middle School",
           "counselors": [
             "Kilgore, Amy",
             "Ultch, Lori"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Novi Meadows 5-6",
           "counselors": [
             "Moiseeff, Audry",
             "Sergison, Megan"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Career Prep High School",
           "counselors": [
             "Ellsworth, Gloria"
-          ]
+          ],
+          "schoolType": "high"
         }
       ]
     },
@@ -677,7 +753,8 @@
           "counselors": [
             "Taylor, Sheryl",
             "Winston-McCrary, Tannille"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Oak Park Preparatory Academy",
@@ -685,7 +762,8 @@
             "Jones, Rosalyn",
             "Turnbow, Adrianne",
             "Williams, Erin"
-          ]
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
@@ -698,38 +776,44 @@
           "name": "OSTC-NE",
           "counselors": [
             "Maddock, Randy"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "OSTC-NW",
           "counselors": [
             "Hester, Sarah"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "OSTC-SE",
           "counselors": [
             "Haley, Angela"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "OSTC-SW",
           "counselors": [
             "Gouda, Angela"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "ACE Early College",
           "counselors": [
             "Fekaris, Kristy"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "VLAC",
           "counselors": [
             "Connell, Christine",
             "Wasilk, Kim"
-          ]
+          ],
+          "schoolType": "unique"
         }
       ]
     },
@@ -747,19 +831,22 @@
             "Jergler, Charles",
             "Muehlman, Alison",
             "Stanjones, Laura"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Oxford Early College",
           "counselors": [
             "Suckley, Mark"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Oxford Bridges High School",
           "counselors": [
             "Dietiker, Catherine"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Oxford Virtual Academy",
@@ -767,7 +854,8 @@
             "Angelo, Ronda",
             "Greenspan, Amy",
             "Najor, Jocelyn"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "Oxford Middle School",
@@ -775,7 +863,8 @@
             "Malburg, Katelyn",
             "Seawright, Kelsey",
             "Thick, Heather"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -791,21 +880,24 @@
             "Ibarra, Laura",
             "McMillian, Mary",
             "Taylor, LaKeisha"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "ITA High School",
           "counselors": [
             "Davis, Martin",
             "Smolinski, Lisa"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Pontiac Middle School",
           "counselors": [
             "Moody, John",
             "Walker, Angela"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -820,31 +912,36 @@
             "Angelucci, Angela",
             "Drager, Melissa",
             "Pirrmann, Megan"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "AGBU Alex & Marie Manoogian School",
           "counselors": [
             "Holsinger, Joanna"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Bradford Academy",
           "counselors": [
             "Pettway, Tayler"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "Arts & Technology Academy of Pontiac",
           "counselors": [
             "Cole, Christina"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "Keys Grace Academy",
           "counselors": [
             "Bentley, Bruce"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "Michigan Virtual Charter Academy",
@@ -855,7 +952,8 @@
             "LeVasseur, Susan",
             "Martir, Melissa",
             "Scheel, Michael"
-          ]
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
@@ -873,7 +971,8 @@
             "King, Janice",
             "Parliment, Allison",
             "Trottier, Derek"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Rochester High School",
@@ -884,7 +983,8 @@
             "Prashar, Ann",
             "O’Toole-Seyka, Jennifer",
             "Sorentino, Dianna"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Stoney Creek High School",
@@ -895,13 +995,15 @@
             "Govern, Brooke",
             "Lewis, Abbie",
             "Muir, Shelby"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Rochester Alternative Center for Education",
           "counselors": [
             "Marr, Samantha"
-          ]
+          ],
+          "schoolType": "alternative"
         },
         {
           "name": "Hart Middle School",
@@ -911,7 +1013,8 @@
             "Field, Lauren",
             "LaValley, Jeremy",
             "Mershman, Madeline"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Reuther Middle School",
@@ -919,7 +1022,8 @@
             "Daugherty, Kristin",
             "Kast, Anne",
             "Suhajda, Jill"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Van Hoosen Middle School",
@@ -927,7 +1031,8 @@
             "Elder, Lisa",
             "Moran, Erin",
             "Rupp, Michelle"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "West Middle School",
@@ -935,7 +1040,8 @@
             "Hartz, Lauren",
             "Nye, Jennifer",
             "Shannahan, Beth"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -951,13 +1057,15 @@
             "Bcedeker, Erin",
             "Stys, Abbie",
             "Szymanski, Noah"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Churchill Community High School",
           "counselors": [
             "Surdenik, Paul"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Royal Oak Middle School",
@@ -965,7 +1073,8 @@
             "Betman, Michael",
             "Ellis, Samantha",
             "Laurence, Carrie"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -980,7 +1089,8 @@
             "Ellis, Kimberly",
             "Glowacki, Stacy",
             "Jensen, Emily"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "South Lyon East High School",
@@ -988,21 +1098,24 @@
             "Dawson, Amy",
             "Richter, Charlie",
             "Siggia, Angie"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Centennial Middle School",
           "counselors": [
             "Bolton, Amy",
             "Judd, Lisa"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Millennium Middle School",
           "counselors": [
             "Bardsley, Diane",
             "Gilders, Jason"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -1018,7 +1131,8 @@
             "Johnson, Carol",
             "Ward, Julea",
             "Webb, Erica"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "University K-12 Academy",
@@ -1026,19 +1140,22 @@
             "Green, Monique",
             "Harper, Nesha",
             "Jones, Jonita"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "Levey Middle School",
           "counselors": [
             "Hill, Juantonia"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Birney K-8",
           "counselors": [
             "Bussler, K. Jill"
-          ]
+          ],
+          "schoolType": "unique"
         }
       ]
     },
@@ -1052,28 +1169,32 @@
           "counselors": [
             "Karaszewski, Crissy",
             "Powell, Suzanne"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Boulan Park Middle School",
           "counselors": [
             "Burke, Dominique",
             "Pozzo, Michelle"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Larson Middle School",
           "counselors": [
             "Garavanta, Andrea",
             "Mirza, Sana"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Smith Middle School",
           "counselors": [
             "Denyes, Mike",
             "Hartenburg, Jennifer"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Troy High School",
@@ -1085,7 +1206,8 @@
             "Keegan, Tommy",
             "Le, John",
             "Sobczynski, Alexa"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Athens High School",
@@ -1096,13 +1218,15 @@
             "Jamil, Renee",
             "Nagi, Hannah",
             "O'Neill, Ann"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "TCCHS Alternative High School",
           "counselors": [
             "Mohamedally, Derek"
-          ]
+          ],
+          "schoolType": "high"
         }
       ]
     },
@@ -1118,7 +1242,8 @@
             "Morell, Erica",
             "Swanson, Amanda",
             "Wesley, Pam"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Walled Lake Northern High School",
@@ -1127,7 +1252,8 @@
             "Quinn, Kathy",
             "Singer, Michelle",
             "VanKampen, Pamela"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Walled Lake Western High School",
@@ -1136,7 +1262,8 @@
             "Kurowski, Lisa",
             "Sokol, Rachel",
             "Tourikis, Heather"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Banks Middle School",
@@ -1144,7 +1271,8 @@
             "Birge, Julian",
             "Danforth, Carrie",
             "Hart, Amanda"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Smart Middle School",
@@ -1152,7 +1280,8 @@
             "Braley, Julie",
             "Bratke, Maureen",
             "Hoover, Kathleen"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Walnut Creek Middle School",
@@ -1160,7 +1289,8 @@
             "Akins, Connie",
             "Garvin, Rosemary",
             "Lewandowski, John"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -1175,7 +1305,8 @@
             "Hembree, Ken",
             "Hudson, Ashley",
             "Lane, Rachel"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Mott High School",
@@ -1183,13 +1314,15 @@
             "Bilinski, Jim",
             "Shelton, Mary",
             "VanGorder, Carrie"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Durant Alternative High School",
           "counselors": [
             "Jergler, Jennifer"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Mason Middle School",
@@ -1197,7 +1330,8 @@
             "Mells, David",
             "Rhein, Kim",
             "Taplin, Stacy"
-          ]
+          ],
+          "schoolType": "middle"
         },
         {
           "name": "Pierce Middle School",
@@ -1205,7 +1339,8 @@
             "Noble-Farmiloe, Annette",
             "Taplin, Stacey",
             "Tunnicliff, Jeff"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     },
@@ -1223,13 +1358,15 @@
             "Hepper, John",
             "Landon, Kyle",
             "Wegrzynowicz, Joanne"
-          ]
+          ],
+          "schoolType": "high"
         },
         {
           "name": "Oakland Early College",
           "counselors": [
             "Bellairs, Carly"
-          ]
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "West Bloomfield Middle School",
@@ -1237,7 +1374,8 @@
             "Anderson, J’Mesha",
             "Chang, Susan",
             "Hamilton, Rachel"
-          ]
+          ],
+          "schoolType": "middle"
         }
       ]
     }

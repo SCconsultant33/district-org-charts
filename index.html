@@ -99,8 +99,27 @@
     .schools {
       margin-top: 1.25rem;
       display: grid;
+      gap: 1rem;
+    }
+
+    .school-group {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .school-group h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--brand-primary);
+      border-left: 4px solid var(--brand-secondary);
+      padding-left: 0.5rem;
+    }
+
+    .school-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 0.85rem;
+      align-items: start;
     }
 
     .school {
@@ -109,6 +128,7 @@
       overflow: clip;
       background: var(--surface);
       box-shadow: 0 2px 8px rgba(31, 41, 55, 0.06);
+      align-self: start;
     }
 
     .accordion-trigger {
@@ -243,13 +263,23 @@
 
     const schoolCategory = (name) => {
       const lower = name.toLowerCase();
-      if (lower.includes('alternative') || lower.includes('virtual') || lower.includes('academy') || lower.includes('programming')) return 'alternative';
+
+      // Unique grade-band programs should remain yellow even if they include words like "academy".
+      if (lower.includes('junior high') || /\bk-12\b|\bk-8\b|\b5-6\b|\b3-8\b/.test(lower)) return 'unique';
       if (lower.includes('elementary')) return 'elementary';
       if (lower.includes('high school')) return 'high';
       if (lower.includes('middle school')) return 'middle';
-      if (lower.includes('junior high') || /\bk-12\b|\bk-8\b|\b5-6\b/.test(lower)) return 'unique';
+      if (lower.includes('alternative') || lower.includes('virtual') || lower.includes('academy') || lower.includes('programming')) return 'alternative';
       return 'unique';
     };
+
+    const LEVELS = [
+      { type: 'high', label: 'High School' },
+      { type: 'middle', label: 'Middle School' },
+      { type: 'elementary', label: 'Elementary School' },
+      { type: 'unique', label: 'Unique Grade Band School' },
+      { type: 'alternative', label: 'Alternative or Specialized Program' }
+    ];
 
     function renderDistrict(district) {
       schoolsContainer.innerHTML = '';
@@ -264,39 +294,64 @@
       updatedEl.textContent = `Last updated: ${district.lastUpdated}`;
       emptyEl.hidden = true;
 
-      district.schools.forEach((school, idx) => {
-        const schoolId = `school-panel-${district.id}-${idx}`;
-        const wrapper = document.createElement('article');
-        wrapper.className = `school school-${schoolCategory(school.name)}`;
+      const grouped = new Map(LEVELS.map((level) => [level.type, []]));
+      district.schools.forEach((school) => {
+        const type = school.schoolType || schoolCategory(school.name);
+        if (!grouped.has(type)) grouped.set(type, []);
+        grouped.get(type).push(school);
+      });
 
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'accordion-trigger';
-        button.setAttribute('aria-expanded', 'false');
-        button.setAttribute('aria-controls', schoolId);
-        button.innerHTML = `<span>${school.name}</span><span aria-hidden="true">+</span>`;
+      LEVELS.forEach((level) => {
+        const schools = grouped.get(level.type) || [];
+        if (!schools.length) return;
 
-        const panel = document.createElement('div');
-        panel.className = 'accordion-panel';
-        panel.id = schoolId;
-        panel.hidden = true;
+        const groupSection = document.createElement('section');
+        groupSection.className = 'school-group';
 
-        [...school.counselors].sort(byLastName).forEach((name) => {
-          const card = document.createElement('span');
-          card.className = 'counselor-card';
-          card.textContent = formatCounselorName(name);
-          panel.appendChild(card);
+        const heading = document.createElement('h3');
+        heading.textContent = level.label;
+        groupSection.appendChild(heading);
+
+        const groupGrid = document.createElement('div');
+        groupGrid.className = 'school-grid';
+
+        schools.forEach((school, idx) => {
+          const schoolId = `school-panel-${district.id}-${level.type}-${idx}`;
+          const wrapper = document.createElement('article');
+          wrapper.className = `school school-${level.type}`;
+
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'accordion-trigger';
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-controls', schoolId);
+          button.innerHTML = `<span>${school.name}</span><span aria-hidden="true">+</span>`;
+
+          const panel = document.createElement('div');
+          panel.className = 'accordion-panel';
+          panel.id = schoolId;
+          panel.hidden = true;
+
+          [...school.counselors].sort(byLastName).forEach((name) => {
+            const card = document.createElement('span');
+            card.className = 'counselor-card';
+            card.textContent = formatCounselorName(name);
+            panel.appendChild(card);
+          });
+
+          button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!expanded));
+            button.lastElementChild.textContent = expanded ? '+' : '−';
+            panel.hidden = expanded;
+          });
+
+          wrapper.append(button, panel);
+          groupGrid.appendChild(wrapper);
         });
 
-        button.addEventListener('click', () => {
-          const expanded = button.getAttribute('aria-expanded') === 'true';
-          button.setAttribute('aria-expanded', String(!expanded));
-          button.lastElementChild.textContent = expanded ? '+' : '−';
-          panel.hidden = !expanded;
-        });
-
-        wrapper.append(button, panel);
-        schoolsContainer.appendChild(wrapper);
+        groupSection.appendChild(groupGrid);
+        schoolsContainer.appendChild(groupSection);
       });
     }
 
