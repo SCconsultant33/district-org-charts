@@ -27,7 +27,7 @@
           "counselors": [
             "Henning, Colton"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         }
       ]
     },
@@ -167,7 +167,7 @@
           "counselors": [
             "Erickson, Kristen"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Covington School 3-8",
@@ -341,7 +341,7 @@
           "counselors": [
             "Youngerman, Stacey"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Clarkston Virtual Academy",
@@ -436,7 +436,7 @@
           "counselors": [
             "Klotz, Katie"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Remote and Virtual Programming",
@@ -473,7 +473,7 @@
             "Malnofski, Heather",
             "Mirkes, Michelle"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Ferndale Middle School",
@@ -510,7 +510,7 @@
           "counselors": [
             "Glasper, Christine"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Hazel Park Junior High School",
@@ -604,7 +604,7 @@
             "Bernstein, Whitney",
             "Phelps, Alexandria"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "IA Okma",
@@ -612,14 +612,14 @@
             "Hanson, Kristin",
             "Healy, Caylan"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "IA West",
           "counselors": [
             "Piagentini, Brigid"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         }
       ]
     },
@@ -739,7 +739,7 @@
           "counselors": [
             "Ellsworth, Gloria"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         }
       ]
     },
@@ -763,7 +763,7 @@
             "Turnbow, Adrianne",
             "Williams, Erin"
           ],
-          "schoolType": "alternative"
+          "schoolType": "middle"
         }
       ]
     },
@@ -777,35 +777,35 @@
           "counselors": [
             "Maddock, Randy"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "OSTC-NW",
           "counselors": [
             "Hester, Sarah"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "OSTC-SE",
           "counselors": [
             "Haley, Angela"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "OSTC-SW",
           "counselors": [
             "Gouda, Angela"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "ACE Early College",
           "counselors": [
             "Fekaris, Kristy"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "VLAC",
@@ -813,7 +813,7 @@
             "Connell, Christine",
             "Wasilk, Kim"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         }
       ]
     },
@@ -839,14 +839,14 @@
           "counselors": [
             "Suckley, Mark"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "Oxford Bridges High School",
           "counselors": [
             "Dietiker, Catherine"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Oxford Virtual Academy",
@@ -927,21 +927,21 @@
           "counselors": [
             "Pettway, Tayler"
           ],
-          "schoolType": "alternative"
+          "schoolType": "unique"
         },
         {
           "name": "Arts & Technology Academy of Pontiac",
           "counselors": [
             "Cole, Christina"
           ],
-          "schoolType": "alternative"
+          "schoolType": "unique"
         },
         {
           "name": "Keys Grace Academy",
           "counselors": [
             "Bentley, Bruce"
           ],
-          "schoolType": "alternative"
+          "schoolType": "unique"
         },
         {
           "name": "Michigan Virtual Charter Academy",
@@ -1065,7 +1065,7 @@
           "counselors": [
             "Surdenik, Paul"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Royal Oak Middle School",
@@ -1226,7 +1226,7 @@
           "counselors": [
             "Mohamedally, Derek"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         }
       ]
     },
@@ -1322,7 +1322,7 @@
           "counselors": [
             "Jergler, Jennifer"
           ],
-          "schoolType": "high"
+          "schoolType": "alternative"
         },
         {
           "name": "Mason Middle School",
@@ -1366,7 +1366,7 @@
           "counselors": [
             "Bellairs, Carly"
           ],
-          "schoolType": "unique"
+          "schoolType": "alternative"
         },
         {
           "name": "West Bloomfield Middle School",
