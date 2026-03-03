@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oakland County District Counselor Directory</title>
+  <style>
+    :root {
+      --brand-primary: #2A328B;
+      --brand-secondary: #00944B;
+      --bg: #f6f8fb;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #cfd6e3;
+      --surface: #ffffff;
+      --focus: #0b5fff;
+      --high: #f7b267;
+      --middle: #8fd19e;
+      --elementary: #9ec5fe;
+      --alternative: #b9a7e8;
+      --unique: #f7e17f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef1fa 0%, var(--bg) 30%, var(--bg) 100%);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--brand-primary);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(42, 50, 139, 0.08);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      color: var(--brand-primary);
+    }
+
+    header p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+    }
+
+    .controls {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      max-width: 460px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--brand-primary);
+    }
+
+    select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 2px solid var(--brand-primary);
+      border-radius: 0.5rem;
+      font: inherit;
+      color: var(--text);
+      background-color: #fff;
+    }
+
+    select:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .district-meta {
+      margin-top: 1rem;
+      color: var(--brand-secondary);
+      font-weight: 700;
+    }
+
+    .schools {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .school {
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: clip;
+      background: var(--surface);
+      box-shadow: 0 2px 8px rgba(31, 41, 55, 0.06);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      color: #111827;
+      padding: 0.85rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .school-high .accordion-trigger { background: var(--high); }
+    .school-middle .accordion-trigger { background: var(--middle); }
+    .school-elementary .accordion-trigger { background: var(--elementary); }
+    .school-alternative .accordion-trigger { background: var(--alternative); }
+    .school-unique .accordion-trigger { background: var(--unique); }
+
+    .accordion-trigger:hover { filter: brightness(0.96); }
+
+    .accordion-panel {
+      padding: 0.8rem 0.85rem 0.9rem;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .accordion-panel[hidden] { display: none; }
+
+    .counselor-card {
+      border: 1px solid #d6dbe7;
+      border-radius: 999px;
+      padding: 0.35rem 0.65rem;
+      background: #f8fafc;
+      font-size: 0.95rem;
+    }
+
+    .empty {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      background: #111827;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.35rem;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus-visible {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <main id="main-content" class="container">
+    <header>
+      <h1>Oakland County District Counselor Directory</h1>
+      <p>Select a district to view schools and counseling staff.</p>
+    </header>
+
+    <section aria-labelledby="directory-controls">
+      <h2 id="directory-controls" style="font-size:1.1rem; margin:1rem 0 0.5rem; color:#2A328B;">Directory controls</h2>
+      <div class="controls">
+        <label for="district-select">District</label>
+        <select id="district-select" aria-describedby="district-help">
+          <option value="">Choose a district</option>
+        </select>
+        <p id="district-help" style="margin:0; color:#4b5563;">After you select a district, expand schools to view counselor names.</p>
+      </div>
+    </section>
+
+    <p class="district-meta" id="district-updated" aria-live="polite"></p>
+    <section id="schools-region" aria-live="polite" aria-labelledby="schools-heading">
+      <h2 id="schools-heading" style="font-size:1.1rem; margin-top:1.1rem; color:#2A328B;">Schools</h2>
+      <div id="schools" class="schools"></div>
+      <p class="empty" id="empty-message">No district selected.</p>
+    </section>
+  </main>
+
+  <script>
+    const districtSelect = document.getElementById('district-select');
+    const schoolsContainer = document.getElementById('schools');
+    const updatedEl = document.getElementById('district-updated');
+    const emptyEl = document.getElementById('empty-message');
+
+    const normalize = (name) => (name || '').trim();
+
+    const parseCounselorName = (name) => {
+      const [last = '', first = ''] = normalize(name).split(',').map((part) => part.trim());
+      return { first, last };
+    };
+
+    const formatCounselorName = (name) => {
+      const { first, last } = parseCounselorName(name);
+      if (!first && !last) return name;
+      if (!first) return last;
+      if (!last) return first;
+      return `${first} ${last}`;
+    };
+
+    const byLastName = (a, b) => {
+      const aParsed = parseCounselorName(a);
+      const bParsed = parseCounselorName(b);
+      return aParsed.last.localeCompare(bParsed.last, undefined, { sensitivity: 'base' }) ||
+             aParsed.first.localeCompare(bParsed.first, undefined, { sensitivity: 'base' });
+    };
+
+    const schoolCategory = (name) => {
+      const lower = name.toLowerCase();
+
+      // Unique grade-band programs should remain yellow even if they include words like "academy".
+      if (lower.includes('junior high') || /\bk-12\b|\bk-8\b|\b5-6\b|\b3-8\b/.test(lower)) return 'unique';
+      if (lower.includes('elementary')) return 'elementary';
+      if (lower.includes('high school')) return 'high';
+      if (lower.includes('middle school')) return 'middle';
+      if (lower.includes('alternative') || lower.includes('virtual') || lower.includes('academy') || lower.includes('programming')) return 'alternative';
+      return 'unique';
+    };
+
+    function renderDistrict(district) {
+      schoolsContainer.innerHTML = '';
+
+      if (!district) {
+        updatedEl.textContent = '';
+        emptyEl.hidden = false;
+        emptyEl.textContent = 'No district selected.';
+        return;
+      }
+
+      updatedEl.textContent = `Last updated: ${district.lastUpdated}`;
+      emptyEl.hidden = true;
+
+      district.schools.forEach((school, idx) => {
+        const schoolId = `school-panel-${district.id}-${idx}`;
+        const wrapper = document.createElement('article');
+        wrapper.className = `school school-${schoolCategory(school.name)}`;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'accordion-trigger';
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', schoolId);
+        button.innerHTML = `<span>${school.name}</span><span aria-hidden="true">+</span>`;
+
+        const panel = document.createElement('div');
+        panel.className = 'accordion-panel';
+        panel.id = schoolId;
+        panel.hidden = true;
+
+        [...school.counselors].sort(byLastName).forEach((name) => {
+          const card = document.createElement('span');
+          card.className = 'counselor-card';
+          card.textContent = formatCounselorName(name);
+          panel.appendChild(card);
+        });
+
+        button.addEventListener('click', () => {
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!expanded));
+          button.lastElementChild.textContent = expanded ? '+' : '−';
+          panel.hidden = !expanded;
+        });
+
+        wrapper.append(button, panel);
+        schoolsContainer.appendChild(wrapper);
+      });
+    }
+
+    const DATA_FILE = 'districts.json';
+
+    async function init() {
+      const response = await fetch(DATA_FILE, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Unable to load ${DATA_FILE} (HTTP ${response.status})`);
+
+      const data = await response.json();
+      const districts = data.districts.sort((a, b) => a.name.localeCompare(b.name));
+
+      districts.forEach((district) => {
+        const option = document.createElement('option');
+        option.value = district.id;
+        option.textContent = district.name;
+        districtSelect.appendChild(option);
+      });
+
+      districtSelect.addEventListener('change', () => {
+        const selected = districts.find((d) => d.id === districtSelect.value);
+        renderDistrict(selected);
+      });
+    }
+
+    init().catch((error) => {
+      emptyEl.hidden = false;
+      emptyEl.textContent = `Unable to load district directory data. ${error.message}`;
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
