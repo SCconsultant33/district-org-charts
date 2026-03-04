@@ -123,6 +123,17 @@
       populateCounselors();
     }
 
+
+    function todayString() {
+      const now = new Date();
+      return `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
+    }
+
+    function touchDistrictUpdated() {
+      const district = currentDistrict();
+      district.lastUpdated = todayString();
+    }
+
     function populateDistricts() {
       districtSel.innerHTML = '';
       data.districts
@@ -140,7 +151,8 @@
       const school = currentSchool();
       const oldName = counselorSel.value;
       school.counselors = school.counselors.filter((c) => c !== oldName);
-      changes.push(`Removed ${oldName} from ${school.name} (${currentDistrict().name}).`);
+      touchDistrictUpdated();
+      changes.push(`Removed ${oldName} from ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
       populateCounselors();
       writeLog();
     }
@@ -153,7 +165,8 @@
       const idx = school.counselors.findIndex((c) => c === oldName);
       if (idx < 0) return;
       school.counselors[idx] = newName;
-      changes.push(`Replaced ${oldName} with ${newName} at ${school.name} (${currentDistrict().name}).`);
+      touchDistrictUpdated();
+      changes.push(`Replaced ${oldName} with ${newName} at ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
       replacementInput.value = '';
       populateCounselors();
       counselorSel.value = newName;
