@@ -194,6 +194,74 @@
       font-style: italic;
     }
 
+    .footer-actions {
+      margin-top: 0.65rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .notify-btn {
+      padding: 0.55rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 2px solid var(--brand-primary);
+      background: #fff;
+      color: var(--brand-primary);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.55);
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      z-index: 1100;
+    }
+
+    .modal-backdrop[hidden] { display: none; }
+
+    .modal-card {
+      width: min(720px, 100%);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      max-height: 88vh;
+      overflow: auto;
+    }
+
+    .modal-card h3 {
+      margin: 0 0 0.6rem;
+      color: var(--brand-primary);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .modal-card input,
+    .modal-card select,
+    .modal-card textarea {
+      width: 100%;
+      padding: 0.55rem;
+      border: 1px solid var(--border);
+      border-radius: 0.45rem;
+      font: inherit;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      margin-top: 0.85rem;
+    }
+
     .skip-link {
       position: absolute;
       left: -9999px;
@@ -247,7 +315,55 @@
       <p class="empty" id="empty-message">No district selected.</p>
     </section>
     <p class="district-meta" id="district-updated" aria-live="polite"></p>
+    <div class="footer-actions">
+      <button type="button" id="request-change" class="notify-btn" hidden>Request a directory change</button>
+    </div>
   </main>
+
+  <div id="request-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="request-title">
+    <div class="modal-card">
+      <h3 id="request-title">Request counselor directory update</h3>
+      <p id="request-context" style="margin-top:0; color:#4b5563;"></p>
+      <div class="modal-grid">
+        <div>
+          <label for="request-school">School</label>
+          <select id="request-school"></select>
+        </div>
+        <div>
+          <label for="request-counselor">Counselor to change/add</label>
+          <select id="request-counselor"></select>
+        </div>
+      </div>
+      <div class="modal-grid" style="margin-top:0.75rem;">
+        <div>
+          <label for="request-new-name">New counselor name</label>
+          <input id="request-new-name" placeholder="First Last or TBD">
+        </div>
+        <div>
+          <label for="request-new-email">New counselor email</label>
+          <input id="request-new-email" type="email" placeholder="name@example.org">
+        </div>
+      </div>
+      <div style="margin-top:0.75rem;">
+        <label for="request-reason">Reason for change</label>
+        <select id="request-reason">
+          <option value="">Select a reason</option>
+          <option value="Resignation">Resignation</option>
+          <option value="Changed districts">Changed districts</option>
+          <option value="Retired">Retired</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div style="margin-top:0.75rem;">
+        <label for="request-notes">Additional details</label>
+        <textarea id="request-notes" rows="3" placeholder="Optional context"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="request-cancel" class="notify-btn">Cancel</button>
+        <button type="button" id="request-submit" class="toggle-all">Send request</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     const districtSelect = document.getElementById('district-select');
@@ -255,6 +371,19 @@
     const updatedEl = document.getElementById('district-updated');
     const emptyEl = document.getElementById('empty-message');
     const toggleAllBtn = document.getElementById('toggle-all');
+    const requestChangeBtn = document.getElementById('request-change');
+    const requestModal = document.getElementById('request-modal');
+    const requestSchool = document.getElementById('request-school');
+    const requestCounselor = document.getElementById('request-counselor');
+    const requestNewName = document.getElementById('request-new-name');
+    const requestNewEmail = document.getElementById('request-new-email');
+    const requestReason = document.getElementById('request-reason');
+    const requestNotes = document.getElementById('request-notes');
+    const requestContext = document.getElementById('request-context');
+    const requestCancel = document.getElementById('request-cancel');
+    const requestSubmit = document.getElementById('request-submit');
+
+    let currentDistrict = null;
 
     const normalize = (name) => (name || '').trim();
 
@@ -315,12 +444,80 @@
       const buttons = getAccordionButtons();
       if (!buttons.length) {
         toggleAllBtn.hidden = true;
+        requestChangeBtn.hidden = true;
+        currentDistrict = null;
         return;
       }
 
       const allExpanded = buttons.every((btn) => btn.getAttribute('aria-expanded') === 'true');
       toggleAllBtn.textContent = allExpanded ? 'Collapse all schools' : 'Expand all schools';
       toggleAllBtn.hidden = false;
+    }
+
+
+    function populateRequestCounselors() {
+      if (!currentDistrict) return;
+      const school = currentDistrict.schools.find((s) => s.name === requestSchool.value);
+      requestCounselor.innerHTML = '';
+      const addOption = document.createElement('option');
+      addOption.value = '__new__';
+      addOption.textContent = 'Add new counselor position';
+      requestCounselor.appendChild(addOption);
+
+      if (!school) return;
+      [...school.counselors].sort(byLastName).forEach((c) => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        requestCounselor.appendChild(opt);
+      });
+    }
+
+    function openRequestModal() {
+      if (!currentDistrict) return;
+      requestContext.textContent = `District: ${currentDistrict.name}`;
+      requestSchool.innerHTML = '';
+      currentDistrict.schools.forEach((s) => {
+        const opt = document.createElement('option');
+        opt.value = s.name;
+        opt.textContent = s.name;
+        requestSchool.appendChild(opt);
+      });
+      populateRequestCounselors();
+      requestModal.hidden = false;
+      requestSchool.focus();
+    }
+
+    function closeRequestModal() {
+      requestModal.hidden = true;
+      requestNewName.value = '';
+      requestNewEmail.value = '';
+      requestReason.value = '';
+      requestNotes.value = '';
+      requestChangeBtn.focus();
+    }
+
+    function submitRequestEmail() {
+      if (!currentDistrict) return;
+      const selectedCounselor = requestCounselor.value === '__new__' ? 'Add new counselor position' : requestCounselor.value;
+      const reason = requestReason.value || 'Not specified';
+      const body = encodeURIComponent(
+`Hello Sean,
+
+A directory change was requested:
+
+District: ${currentDistrict.name}
+School: ${requestSchool.value}
+Counselor to change/add: ${selectedCounselor}
+New counselor name: ${requestNewName.value || 'Not provided'}
+New counselor email: ${requestNewEmail.value || 'Not provided'}
+Reason: ${reason}
+Additional details: ${requestNotes.value || 'None'}
+
+Thank you.`);
+      const subject = encodeURIComponent(`Counselor Directory Change Request - ${currentDistrict.name}`);
+      window.location.href = `mailto:sean.dougherty@oakland.k12.mi.us?subject=${subject}&body=${body}`;
+      closeRequestModal();
     }
 
     function renderDistrict(district) {
@@ -331,11 +528,15 @@
         emptyEl.hidden = false;
         emptyEl.textContent = 'No district selected.';
         toggleAllBtn.hidden = true;
+        requestChangeBtn.hidden = true;
+        currentDistrict = null;
         return;
       }
 
+      currentDistrict = district;
       updatedEl.textContent = `Last updated: ${district.lastUpdated}`;
       emptyEl.hidden = true;
+      requestChangeBtn.hidden = false;
 
       const grouped = new Map(LEVELS.map((level) => [level.type, []]));
       district.schools.forEach((school) => {
@@ -425,6 +626,14 @@
         const expandAll = toggleAllBtn.textContent.includes('Expand');
         buttons.forEach((button) => setAccordionState(button, expandAll));
         updateToggleAllLabel();
+      });
+
+      requestChangeBtn.addEventListener('click', openRequestModal);
+      requestSchool.addEventListener('change', populateRequestCounselors);
+      requestCancel.addEventListener('click', closeRequestModal);
+      requestSubmit.addEventListener('click', submitRequestEmail);
+      requestModal.addEventListener('click', (event) => {
+        if (event.target === requestModal) closeRequestModal();
       });
     }
 
