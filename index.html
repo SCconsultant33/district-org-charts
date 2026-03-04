@@ -7,7 +7,7 @@
   <style>
     :root {
       --brand-primary: #2A328B;
-      --brand-secondary: #00944B;
+      --brand-secondary: #0b5d2a;
       --bg: #f6f8fb;
       --text: #1f2937;
       --muted: #4b5563;
@@ -491,7 +491,7 @@
 
     function openRequestModal() {
       if (!currentDistrict) return;
-      requestContext.textContent = `District: ${currentDistrict.name}`;
+      requestContext.textContent = currentDistrict.name;
       requestSchool.innerHTML = '';
       currentDistrict.schools.forEach((s) => {
         const opt = document.createElement('option');
