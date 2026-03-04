@@ -262,6 +262,18 @@
       margin-top: 0.85rem;
     }
 
+    .modal-action-btn {
+      min-width: 150px;
+      padding: 0.55rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 2px solid var(--brand-primary);
+      background: #fff;
+      color: var(--brand-primary);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
     .skip-link {
       position: absolute;
       left: -9999px;
@@ -323,7 +335,11 @@
   <div id="request-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="request-title">
     <div class="modal-card">
       <h3 id="request-title">Request counselor directory update</h3>
-      <p id="request-context" style="margin-top:0; color:#4b5563;"></p>
+      <p style="margin-top:0; color:#4b5563;">Enter details of the counselor change. This request will populate an email to send to the School Counseling Consultant at Oakland Schools.</p>
+      <div style="margin:0.2rem 0 0.75rem;">
+        <label for="request-context" style="display:block;">District</label>
+        <p id="request-context" style="margin:0; color:#2A328B; font-weight:700;"></p>
+      </div>
       <div class="modal-grid">
         <div>
           <label for="request-school">School</label>
@@ -359,8 +375,8 @@
         <textarea id="request-notes" rows="3" placeholder="Optional context"></textarea>
       </div>
       <div class="modal-actions">
-        <button type="button" id="request-cancel" class="notify-btn">Cancel</button>
-        <button type="button" id="request-submit" class="toggle-all">Send request</button>
+        <button type="button" id="request-cancel" class="modal-action-btn">Cancel</button>
+        <button type="button" id="request-submit" class="modal-action-btn">Send request</button>
       </div>
     </div>
   </div>
