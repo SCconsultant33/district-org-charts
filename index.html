@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oakland County District Counselor Directory</title>
+  <title>Oakland County School Counselor District Org Charts</title>
   <style>
     :root {
       --brand-primary: #2A328B;
@@ -210,7 +210,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <main id="main-content" class="container">
     <header>
-      <h1>Oakland County District Counselor Directory</h1>
+      <h1>Oakland County School Counselor District Org Charts</h1>
       <p>Select a district to view schools and counseling staff.</p>
     </header>
 
@@ -221,7 +221,7 @@
         <select id="district-select" aria-describedby="district-help">
           <option value="">Choose a district</option>
         </select>
-        <p id="district-help" style="margin:0; color:#4b5563;">After you select a district, expand schools to view counselor names.</p>
+        <p id="district-help" style="margin:0; color:#4b5563;">After you select a district, expand schools to view counselors.</p>
       </div>
     </section>
 
@@ -229,7 +229,7 @@
     <section id="schools-region" aria-live="polite" aria-labelledby="schools-heading">
       <h2 id="schools-heading" style="font-size:1.1rem; margin-top:1.1rem; color:#2A328B;">Schools</h2>
       <div id="schools" class="schools"></div>
-      <p class="empty" id="empty-message">No district selected.</p>
+      <p class="empty" id="empty-message">Select a district to view schools.</p>
     </section>
   </main>
 
@@ -274,11 +274,11 @@
     };
 
     const LEVELS = [
-      { type: 'high', label: 'High School' },
-      { type: 'middle', label: 'Middle School' },
-      { type: 'elementary', label: 'Elementary School' },
-      { type: 'unique', label: 'Unique Grade Band School' },
-      { type: 'alternative', label: 'Alternative or Specialized Program' }
+      { type: 'high', label: 'High Schools' },
+      { type: 'middle', label: 'Middle Schools' },
+      { type: 'elementary', label: 'Elementary Schools' },
+      { type: 'unique', label: 'Unique Grade Band Schools' },
+      { type: 'alternative', label: 'Alternative or Specialized Programs' }
     ];
 
     function renderDistrict(district) {
