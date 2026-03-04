@@ -225,7 +225,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <main id="main-content" class="container">
     <header>
-      <h1>Oakland County School Counselor District Org Charts</h1>
+      <h1 id="page-title">Oakland County School Counselor District Org Charts</h1>
       <p>Select a district to view schools and counseling staff.</p>
     </header>
 
@@ -433,6 +433,27 @@
       emptyEl.textContent = `Unable to load district directory data. ${error.message}`;
       console.error(error);
     });
+
+
+    // Hidden admin easter egg: click title 7 times, then enter passphrase.
+    const ADMIN_PASSPHRASE = 'oakland-admin';
+    let titleClicks = 0;
+    const titleEl = document.getElementById('page-title');
+
+    titleEl.addEventListener('click', () => {
+      titleClicks += 1;
+      if (titleClicks >= 7) {
+        const entry = window.prompt('Admin access phrase:');
+        if (entry === ADMIN_PASSPHRASE) {
+          sessionStorage.setItem('district-admin-auth', 'ok');
+          window.location.href = 'admin.html';
+        }
+        titleClicks = 0;
+      }
+
+      window.setTimeout(() => { titleClicks = 0; }, 5000);
+    });
+
   </script>
 </body>
 </html>
