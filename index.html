@@ -28,7 +28,7 @@
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
       color: var(--text);
-      background: linear-gradient(180deg, #eef1fa 0%, var(--bg) 30%, var(--bg) 100%);
+      background: var(--bg);
     }
 
     .container {
@@ -94,6 +94,21 @@
       margin-top: 1rem;
       color: var(--brand-secondary);
       font-weight: 700;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+    }
+
+    .toggle-all {
+      margin-top: 0.35rem;
+      padding: 0.6rem 0.75rem;
+      border: 2px solid var(--brand-secondary);
+      border-radius: 0.5rem;
+      background: #fff;
+      color: #065f46;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      width: fit-content;
     }
 
     .schools {
@@ -221,16 +236,17 @@
         <select id="district-select" aria-describedby="district-help">
           <option value="">Choose a district</option>
         </select>
-        <p id="district-help" style="margin:0; color:#4b5563;">After you select a district, expand schools to view counselors.</p>
+        <p id="district-help" style="margin:0; color:#4b5563;">After you select a district, expand schools to view counselor names.</p>
+        <button type="button" id="toggle-all" class="toggle-all" hidden>Expand all schools</button>
       </div>
     </section>
 
-    <p class="district-meta" id="district-updated" aria-live="polite"></p>
     <section id="schools-region" aria-live="polite" aria-labelledby="schools-heading">
       <h2 id="schools-heading" style="font-size:1.1rem; margin-top:1.1rem; color:#2A328B;">Schools</h2>
       <div id="schools" class="schools"></div>
-      <p class="empty" id="empty-message">Select a district to view schools.</p>
+      <p class="empty" id="empty-message">No district selected.</p>
     </section>
+    <p class="district-meta" id="district-updated" aria-live="polite"></p>
   </main>
 
   <script>
@@ -238,6 +254,7 @@
     const schoolsContainer = document.getElementById('schools');
     const updatedEl = document.getElementById('district-updated');
     const emptyEl = document.getElementById('empty-message');
+    const toggleAllBtn = document.getElementById('toggle-all');
 
     const normalize = (name) => (name || '').trim();
 
@@ -281,6 +298,31 @@
       { type: 'alternative', label: 'Alternative or Specialized Programs' }
     ];
 
+
+    function getAccordionButtons() {
+      return [...schoolsContainer.querySelectorAll('.accordion-trigger')];
+    }
+
+    function setAccordionState(button, expand) {
+      const panelId = button.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      button.setAttribute('aria-expanded', String(expand));
+      button.lastElementChild.textContent = expand ? '−' : '+';
+      if (panel) panel.hidden = !expand;
+    }
+
+    function updateToggleAllLabel() {
+      const buttons = getAccordionButtons();
+      if (!buttons.length) {
+        toggleAllBtn.hidden = true;
+        return;
+      }
+
+      const allExpanded = buttons.every((btn) => btn.getAttribute('aria-expanded') === 'true');
+      toggleAllBtn.textContent = allExpanded ? 'Collapse all schools' : 'Expand all schools';
+      toggleAllBtn.hidden = false;
+    }
+
     function renderDistrict(district) {
       schoolsContainer.innerHTML = '';
 
@@ -288,6 +330,7 @@
         updatedEl.textContent = '';
         emptyEl.hidden = false;
         emptyEl.textContent = 'No district selected.';
+        toggleAllBtn.hidden = true;
         return;
       }
 
@@ -341,9 +384,8 @@
 
           button.addEventListener('click', () => {
             const expanded = button.getAttribute('aria-expanded') === 'true';
-            button.setAttribute('aria-expanded', String(!expanded));
-            button.lastElementChild.textContent = expanded ? '+' : '−';
-            panel.hidden = expanded;
+            setAccordionState(button, !expanded);
+            updateToggleAllLabel();
           });
 
           wrapper.append(button, panel);
@@ -353,6 +395,8 @@
         groupSection.appendChild(groupGrid);
         schoolsContainer.appendChild(groupSection);
       });
+
+      updateToggleAllLabel();
     }
 
     const DATA_FILE = 'districts.json';
@@ -374,6 +418,13 @@
       districtSelect.addEventListener('change', () => {
         const selected = districts.find((d) => d.id === districtSelect.value);
         renderDistrict(selected);
+      });
+
+      toggleAllBtn.addEventListener('click', () => {
+        const buttons = getAccordionButtons();
+        const expandAll = toggleAllBtn.textContent.includes('Expand');
+        buttons.forEach((button) => setAccordionState(button, expandAll));
+        updateToggleAllLabel();
       });
     }
 
