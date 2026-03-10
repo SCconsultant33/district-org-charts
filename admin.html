@@ -46,6 +46,7 @@
           <input id="replacement" placeholder="e.g. Jane Smith or TBD">
         </div>
         <div class="actions" style="align-items:end;">
+          <button id="add">Add counselor</button>
           <button id="replace">Replace counselor</button>
           <button id="remove" class="secondary">Remove counselor</button>
         </div>
@@ -157,6 +158,21 @@
       writeLog();
     }
 
+
+    function addCounselor() {
+      const school = currentSchool();
+      const newName = toLastFirst(replacementInput.value);
+      if (!newName) return;
+      if (school.counselors.includes(newName)) return;
+      school.counselors.push(newName);
+      touchDistrictUpdated();
+      changes.push(`Added ${newName} to ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
+      replacementInput.value = '';
+      populateCounselors();
+      counselorSel.value = newName;
+      writeLog();
+    }
+
     function replaceCounselor() {
       const school = currentSchool();
       const oldName = counselorSel.value;
@@ -191,6 +207,7 @@
 
     districtSel.addEventListener('change', populateSchools);
     schoolSel.addEventListener('change', populateCounselors);
+    document.getElementById('add').addEventListener('click', addCounselor);
     document.getElementById('remove').addEventListener('click', removeCounselor);
     document.getElementById('replace').addEventListener('click', replaceCounselor);
     document.getElementById('download').addEventListener('click', downloadJson);
