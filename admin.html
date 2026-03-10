@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counselor Directory Admin</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f6f8fb;color:#1f2937;margin:0}
+    .wrap{max-width:900px;margin:0 auto;padding:1rem}
+    h1{color:#2A328B}
+    .card{background:#fff;border:1px solid #cfd6e3;border-radius:.7rem;padding:1rem;margin-bottom:1rem}
+    label{font-weight:700;display:block;margin:.5rem 0 .3rem}
+    select,input,button,textarea{font:inherit}
+    select,input,textarea{width:100%;padding:.55rem;border:1px solid #cfd6e3;border-radius:.45rem}
+    button{padding:.55rem .8rem;border-radius:.45rem;border:1px solid #2A328B;background:#2A328B;color:#fff;cursor:pointer}
+    button.secondary{background:#fff;color:#2A328B}
+    .row{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
+    .log{white-space:pre-wrap;background:#f8fafc;border:1px solid #dbe2ee;padding:.7rem;border-radius:.45rem;min-height:120px}
+    .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    .warn{color:#92400e;background:#fff7ed;border:1px solid #fed7aa;padding:.6rem;border-radius:.45rem}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Directory Admin (Private)</h1>
+    <div class="warn">This tool updates data locally in your browser. Use “Download updated JSON” and commit the file to publish changes.</div>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <label for="district">District</label>
+          <select id="district"></select>
+        </div>
+        <div>
+          <label for="school">School</label>
+          <select id="school"></select>
+        </div>
+      </div>
+
+      <label for="counselor">Counselor to change</label>
+      <select id="counselor"></select>
+
+      <div class="row">
+        <div>
+          <label for="replacement">Replacement name (First Last) or TBD</label>
+          <input id="replacement" placeholder="e.g. Jane Smith or TBD">
+        </div>
+        <div class="actions" style="align-items:end;">
+          <button id="add">Add counselor</button>
+          <button id="replace">Replace counselor</button>
+          <button id="remove" class="secondary">Remove counselor</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Change log</h2>
+      <div id="log" class="log"></div>
+      <div class="actions" style="margin-top:.6rem;">
+        <button id="download">Download updated districts.json</button>
+        <button id="email" class="secondary">Draft notification email</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const ACCESS_KEY = 'district-admin-auth';
+    if (sessionStorage.getItem(ACCESS_KEY) !== 'ok') {
+      document.body.innerHTML = '<main class="wrap"><p>Unauthorized.</p></main>';
+      throw new Error('Unauthorized');
+    }
+
+    const districtSel = document.getElementById('district');
+    const schoolSel = document.getElementById('school');
+    const counselorSel = document.getElementById('counselor');
+    const replacementInput = document.getElementById('replacement');
+    const logEl = document.getElementById('log');
+    const changes = [];
+    let data;
+
+    const toLastFirst = (displayName) => {
+      const trimmed = displayName.trim();
+      if (!trimmed || trimmed.toUpperCase() === 'TBD') return 'TBD';
+      const parts = trimmed.split(/\s+/);
+      if (parts.length === 1) return parts[0];
+      const last = parts.pop();
+      return `${last}, ${parts.join(' ')}`;
+    };
+
+    function writeLog() {
+      logEl.textContent = changes.length
+        ? changes.map((c, i) => `${i + 1}. ${c}`).join('\n')
+        : 'No changes yet.';
+    }
+
+    function currentDistrict() {
+      return data.districts.find((d) => d.id === districtSel.value);
+    }
+
+    function currentSchool() {
+      return currentDistrict().schools.find((s) => s.name === schoolSel.value);
+    }
+
+    function populateCounselors() {
+      const school = currentSchool();
+      counselorSel.innerHTML = '';
+      school.counselors.forEach((c) => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        counselorSel.appendChild(opt);
+      });
+    }
+
+    function populateSchools() {
+      const district = currentDistrict();
+      schoolSel.innerHTML = '';
+      district.schools.forEach((s) => {
+        const opt = document.createElement('option');
+        opt.value = s.name;
+        opt.textContent = s.name;
+        schoolSel.appendChild(opt);
+      });
+      populateCounselors();
+    }
+
+
+    function todayString() {
+      const now = new Date();
+      return `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
+    }
+
+    function touchDistrictUpdated() {
+      const district = currentDistrict();
+      district.lastUpdated = todayString();
+    }
+
+    function populateDistricts() {
+      districtSel.innerHTML = '';
+      data.districts
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .forEach((d) => {
+          const opt = document.createElement('option');
+          opt.value = d.id;
+          opt.textContent = d.name;
+          districtSel.appendChild(opt);
+        });
+      populateSchools();
+    }
+
+    function removeCounselor() {
+      const school = currentSchool();
+      const oldName = counselorSel.value;
+      school.counselors = school.counselors.filter((c) => c !== oldName);
+      touchDistrictUpdated();
+      changes.push(`Removed ${oldName} from ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
+      populateCounselors();
+      writeLog();
+    }
+
+
+    function addCounselor() {
+      const school = currentSchool();
+      const newName = toLastFirst(replacementInput.value);
+      if (!newName) return;
+      if (school.counselors.includes(newName)) return;
+      school.counselors.push(newName);
+      touchDistrictUpdated();
+      changes.push(`Added ${newName} to ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
+      replacementInput.value = '';
+      populateCounselors();
+      counselorSel.value = newName;
+      writeLog();
+    }
+
+    function replaceCounselor() {
+      const school = currentSchool();
+      const oldName = counselorSel.value;
+      const newName = toLastFirst(replacementInput.value);
+      if (!newName) return;
+      const idx = school.counselors.findIndex((c) => c === oldName);
+      if (idx < 0) return;
+      school.counselors[idx] = newName;
+      touchDistrictUpdated();
+      changes.push(`Replaced ${oldName} with ${newName} at ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
+      replacementInput.value = '';
+      populateCounselors();
+      counselorSel.value = newName;
+      writeLog();
+    }
+
+    function downloadJson() {
+      const blob = new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'districts.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function draftEmail() {
+      const subject = encodeURIComponent('Counselor Directory Updates - Action Needed');
+      const body = encodeURIComponent(
+`Hi Sean,\n\nThe following counselor directory updates were made:\n\n${changes.map((c, i) => `${i + 1}. ${c}`).join('\n')}\n\nPlease update:\n- Counselor listserv\n- Smore mailing list\n- Outlook district email group\n`);
+      window.location.href = `mailto:sean.dougherty@oakland.k12.mi.us?subject=${subject}&body=${body}`;
+    }
+
+    districtSel.addEventListener('change', populateSchools);
+    schoolSel.addEventListener('change', populateCounselors);
+    document.getElementById('add').addEventListener('click', addCounselor);
+    document.getElementById('remove').addEventListener('click', removeCounselor);
+    document.getElementById('replace').addEventListener('click', replaceCounselor);
+    document.getElementById('download').addEventListener('click', downloadJson);
+    document.getElementById('email').addEventListener('click', draftEmail);
+
+    fetch('districts.json', { cache: 'no-store' })
+      .then((r) => r.json())
+      .then((json) => {
+        data = json;
+        populateDistricts();
+        writeLog();
+      });
+  </script>
+</body>
+</html>
