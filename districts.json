@@ -244,20 +244,20 @@
     {
       "id": "brandon",
       "name": "Brandon",
-      "lastUpdated": "9/9/2025",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Brandon High School",
           "counselors": [
-            "Belluomo, Ryan",
-            "Eland, Linda"
+            "Eland, Linda",
+            "TBD"
           ],
           "schoolType": "high"
         },
         {
           "name": "Brandon Middle School",
           "counselors": [
-            "Crespo, Janiz"
+            "TBD"
           ],
           "schoolType": "middle"
         },
@@ -626,7 +626,7 @@
     {
       "id": "lake-orion",
       "name": "Lake Orion",
-      "lastUpdated": "8/27/2024",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Lake Orion High School",
@@ -635,9 +635,9 @@
             "Boeneman, Scott",
             "Bruno, Melissa",
             "Bullock, Fawn",
-            "Conner, Alicia",
             "Novak, Michele",
-            "Parraghi, Natalie"
+            "Parraghi, Natalie",
+            "TBD"
           ],
           "schoolType": "high"
         },
@@ -704,16 +704,16 @@
     {
       "id": "novi",
       "name": "Novi",
-      "lastUpdated": "12/20/2024",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Novi High School",
           "counselors": [
-            "Chinn, Rebecca",
             "Farmer, Doug",
             "Keszei, Kathryn",
             "Kilgore, Kevin",
             "Leve, Lauren",
+            "TBD",
             "Tobis, Andrea"
           ],
           "schoolType": "high"
@@ -820,7 +820,7 @@
     {
       "id": "oxford",
       "name": "Oxford",
-      "lastUpdated": "2/7/2025",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Oxford High School",
@@ -860,6 +860,7 @@
         {
           "name": "Oxford Middle School",
           "counselors": [
+            "Bonter, Samantha",
             "Malburg, Katelyn",
             "Seawright, Kelsey",
             "Thick, Heather"
@@ -904,14 +905,17 @@
     {
       "id": "public-school-academies",
       "name": "Public School Academies",
-      "lastUpdated": "12/11/2025",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Lighthouse Connections Academy",
           "counselors": [
             "Angelucci, Angela",
+            "Crespo, Janiz",
             "Drager, Melissa",
-            "Pirrmann, Megan"
+            "Hakim, Jowana",
+            "Pirrmann, Megan",
+            "Porter, Ebony"
           ],
           "schoolType": "alternative"
         },
@@ -991,7 +995,7 @@
           "counselors": [
             "Allen, Nichole",
             "Beach, Philip",
-            "Collins, Carter",
+            "Belluomo, Ryan",
             "Govern, Brooke",
             "Lewis, Abbie",
             "Muir, Shelby"
@@ -1081,7 +1085,7 @@
     {
       "id": "south-lyon",
       "name": "South Lyon",
-      "lastUpdated": "9/17/2025",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "South Lyon High School",
@@ -1113,6 +1117,7 @@
           "name": "Millennium Middle School",
           "counselors": [
             "Bardsley, Diane",
+            "Daniel, Melissa",
             "Gilders, Jason"
           ],
           "schoolType": "middle"
