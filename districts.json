@@ -377,7 +377,7 @@
     {
       "id": "farmington",
       "name": "Farmington",
-      "lastUpdated": "10/27/2025",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "East Middle School",
@@ -398,7 +398,7 @@
         {
           "name": "Warner Middle School",
           "counselors": [
-            "Katoula, Rania",
+            "Kattoula, Rania",
             "Lorion, Abby"
           ],
           "schoolType": "middle"
@@ -960,7 +960,7 @@
     {
       "id": "rochester",
       "name": "Rochester",
-      "lastUpdated": "2/9/2026",
+      "lastUpdated": "3/10/2026",
       "schools": [
         {
           "name": "Adams High School",
@@ -1028,7 +1028,7 @@
         {
           "name": "Van Hoosen Middle School",
           "counselors": [
-            "Elder, Lisa",
+            "Allen, Madaliene",
             "Moran, Erin",
             "Rupp, Michelle"
           ],
