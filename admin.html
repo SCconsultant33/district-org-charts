@@ -17,6 +17,9 @@
     .row{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
     .log{white-space:pre-wrap;background:#f8fafc;border:1px solid #dbe2ee;padding:.7rem;border-radius:.45rem;min-height:120px}
     .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    .action-stack{display:grid;grid-template-columns:1fr;gap:.5rem}
+    .action-stack button{width:100%}
+    @media (min-width: 760px){.action-stack{grid-template-columns:repeat(3,minmax(130px,1fr));}}
     .warn{color:#92400e;background:#fff7ed;border:1px solid #fed7aa;padding:.6rem;border-radius:.45rem}
   </style>
 </head>
@@ -45,7 +48,7 @@
           <label for="replacement">Replacement name (First Last) or TBD</label>
           <input id="replacement" placeholder="e.g. Jane Smith or TBD">
         </div>
-        <div class="actions" style="align-items:end;">
+        <div class="action-stack" style="align-items:end;">
           <button id="add">Add counselor</button>
           <button id="replace">Replace counselor</button>
           <button id="remove" class="secondary">Remove counselor</button>
@@ -148,6 +151,16 @@
       populateSchools();
     }
 
+
+    function sortCounselors(school) {
+      school.counselors.sort((a, b) => {
+        const [aLast = '', aFirst = ''] = a.split(',').map((part) => part.trim());
+        const [bLast = '', bFirst = ''] = b.split(',').map((part) => part.trim());
+        return aLast.localeCompare(bLast, undefined, { sensitivity: 'base' }) ||
+               aFirst.localeCompare(bFirst, undefined, { sensitivity: 'base' });
+      });
+    }
+
     function removeCounselor() {
       const school = currentSchool();
       const oldName = counselorSel.value;
@@ -165,6 +178,7 @@
       if (!newName) return;
       if (school.counselors.includes(newName)) return;
       school.counselors.push(newName);
+      sortCounselors(school);
       touchDistrictUpdated();
       changes.push(`Added ${newName} to ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
       replacementInput.value = '';
@@ -181,6 +195,7 @@
       const idx = school.counselors.findIndex((c) => c === oldName);
       if (idx < 0) return;
       school.counselors[idx] = newName;
+      sortCounselors(school);
       touchDistrictUpdated();
       changes.push(`Replaced ${oldName} with ${newName} at ${school.name} (${currentDistrict().name}). Last updated set to ${currentDistrict().lastUpdated}.`);
       replacementInput.value = '';
