@@ -905,7 +905,7 @@
     {
       "id": "public-school-academies",
       "name": "Public School Academies",
-      "lastUpdated": "3/10/2026",
+      "lastUpdated": "3/26/2026",
       "schools": [
         {
           "name": "Lighthouse Connections Academy",
@@ -918,6 +918,13 @@
             "Porter, Ebony"
           ],
           "schoolType": "alternative"
+        },
+        {
+          "name": "PACE Academy",
+          "counselors": [
+            "Robinson, Kela"
+          ],
+          "schoolType": "unique"
         },
         {
           "name": "AGBU Alex & Marie Manoogian School",
