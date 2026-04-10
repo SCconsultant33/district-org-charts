@@ -746,11 +746,12 @@
     {
       "id": "oak-park",
       "name": "Oak Park",
-      "lastUpdated": "4/8/2025",
+      "lastUpdated": "4/10/2026",
       "schools": [
         {
           "name": "Oak Park High School",
           "counselors": [
+            "Calloway, Amor",
             "Taylor, Sheryl",
             "Winston-McCrary, Tannille"
           ],
