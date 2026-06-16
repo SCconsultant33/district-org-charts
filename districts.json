@@ -1060,7 +1060,7 @@
     {
       "id": "royal-oak",
       "name": "Royal Oak",
-      "lastUpdated": "8/26/2025",
+      "lastUpdated": "6/16/2026",
       "schools": [
         {
           "name": "Royal Oak High School",
@@ -1082,9 +1082,9 @@
         {
           "name": "Royal Oak Middle School",
           "counselors": [
-            "Betman, Michael",
             "Ellis, Samantha",
-            "Laurence, Carrie"
+            "Laurence, Carrie",
+            "TBD"
           ],
           "schoolType": "middle"
         }
