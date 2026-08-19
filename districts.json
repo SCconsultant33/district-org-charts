@@ -71,6 +71,13 @@
           "schoolType": "elementary"
         },
         {
+          "name": "Burton Elementary",
+          "counselors": [
+            "Schlenker, Christina"
+          ],
+          "schoolType": "elementary"
+        },
+        {
           "name": "Rogers Elementary",
           "counselors": [
             "Harrison, Kiara"
@@ -200,7 +207,7 @@
     {
       "id": "bloomfield-hills",
       "name": "Bloomfield Hills",
-      "lastUpdated": "8/18/2025",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "Bloomfield Hills High School",
@@ -225,17 +232,15 @@
           "name": "North Hills Middle School",
           "counselors": [
             "Dalgleish, Lauren",
-            "Lynch, Joan",
-            "Thelen, Sanja"
+            "Lynch, Joan"
           ],
           "schoolType": "middle"
         },
         {
           "name": "South Hills Middle School",
           "counselors": [
-            "Kesner, Laura",
-            "Ash, Nicole",
-            "Schlenker, Christina"
+            "Deptula, Kimberly",
+            "Kesner, Laura"
           ],
           "schoolType": "middle"
         }
@@ -524,7 +529,7 @@
     {
       "id": "holly",
       "name": "Holly",
-      "lastUpdated": "8/13/2024",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "Holly High School",
@@ -538,8 +543,8 @@
         {
           "name": "Holly Middle School",
           "counselors": [
-            "Godoshian, Kristin",
-            "Mattingly, Mark"
+            "Ash, Nicole",
+            "Godoshian, Kristin"
           ],
           "schoolType": "middle"
         },
@@ -596,7 +601,7 @@
     {
       "id": "international-academy",
       "name": "International Academy",
-      "lastUpdated": "8/22/2022",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "IA East",
@@ -610,7 +615,8 @@
           "name": "IA Okma",
           "counselors": [
             "Hanson, Kristin",
-            "Healy, Caylan"
+            "Healy, Caylan",
+            "Thelen, Sanja"
           ],
           "schoolType": "alternative"
         },
@@ -771,7 +777,7 @@
     {
       "id": "oakland-schools",
       "name": "Oakland Schools",
-      "lastUpdated": "8/26/2025",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "OSTC-NE",
@@ -804,7 +810,10 @@
         {
           "name": "ACE Early College",
           "counselors": [
-            "Fekaris, Kristy"
+            "Brasington, Joyce",
+            "Fekaris, Kristy",
+            "Leve, Lauren",
+            "Stice, Josana"
           ],
           "schoolType": "alternative"
         },
@@ -1093,7 +1102,7 @@
     {
       "id": "south-lyon",
       "name": "South Lyon",
-      "lastUpdated": "6/2/2026",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "South Lyon High School",
@@ -1125,6 +1134,7 @@
           "name": "Millennium Middle School",
           "counselors": [
             "Bardsley, Diane",
+            "Bishop, Bailey",
             "Daniel, Melissa",
             "Gilders, Jason"
           ],
@@ -1175,7 +1185,7 @@
     {
       "id": "troy",
       "name": "Troy",
-      "lastUpdated": "8/28/2025",
+      "lastUpdated": "8/19/2026",
       "schools": [
         {
           "name": "Baker Middle School",
@@ -1205,7 +1215,7 @@
           "name": "Smith Middle School",
           "counselors": [
             "Denyes, Mike",
-            "Hartenburg, Jennifer"
+            "Glab, Jamie"
           ],
           "schoolType": "middle"
         },
