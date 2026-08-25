@@ -360,13 +360,12 @@
     {
       "id": "clawson",
       "name": "Clawson",
-      "lastUpdated": "8/26/2025",
+      "lastUpdated": "8/25/2026",
       "schools": [
         {
           "name": "Clawson High School",
           "counselors": [
-            "Capaldi, Ashley",
-            "Rice, Rebecca"
+            "Capaldi, Ashley"
           ],
           "schoolType": "high"
         },
@@ -632,7 +631,7 @@
     {
       "id": "lake-orion",
       "name": "Lake Orion",
-      "lastUpdated": "3/10/2026",
+      "lastUpdated": "8/25/2026",
       "schools": [
         {
           "name": "Lake Orion High School",
@@ -640,17 +639,15 @@
             "Bell, Christy",
             "Boeneman, Scott",
             "Bruno, Melissa",
-            "Bullock, Fawn",
             "Novak, Michele",
-            "Parraghi, Natalie",
-            "TBD"
+            "Parraghi, Natalie"
           ],
           "schoolType": "high"
         },
         {
           "name": "Oakview Middle School",
           "counselors": [
-            "Hill, Angelina"
+            "TBD"
           ],
           "schoolType": "middle"
         },
@@ -777,7 +774,7 @@
     {
       "id": "oakland-schools",
       "name": "Oakland Schools",
-      "lastUpdated": "8/19/2026",
+      "lastUpdated": "8/25/2026",
       "schools": [
         {
           "name": "OSTC-NE",
@@ -796,7 +793,7 @@
         {
           "name": "OSTC-SE",
           "counselors": [
-            "Haley, Angela"
+            "Rice, Rebecca"
           ],
           "schoolType": "alternative"
         },
@@ -1069,7 +1066,7 @@
     {
       "id": "royal-oak",
       "name": "Royal Oak",
-      "lastUpdated": "6/16/2026",
+      "lastUpdated": "8/25/2026",
       "schools": [
         {
           "name": "Royal Oak High School",
@@ -1092,8 +1089,8 @@
           "name": "Royal Oak Middle School",
           "counselors": [
             "Ellis, Samantha",
-            "Laurence, Carrie",
-            "TBD"
+            "Forster, Margaux",
+            "Laurence, Carrie"
           ],
           "schoolType": "middle"
         }
@@ -1145,7 +1142,7 @@
     {
       "id": "southfield",
       "name": "Southfield",
-      "lastUpdated": "4/8/2025",
+      "lastUpdated": "8/25/2026",
       "schools": [
         {
           "name": "Arts & Technology High School",
@@ -1160,9 +1157,8 @@
         {
           "name": "University K-12 Academy",
           "counselors": [
-            "Green, Monique",
-            "Harper, Nesha",
-            "Jones, Jonita"
+            "Crutcher, Lauren",
+            "Green, Monique"
           ],
           "schoolType": "unique"
         },
