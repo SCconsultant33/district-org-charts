@@ -89,12 +89,12 @@
     {
       "id": "birmingham",
       "name": "Birmingham",
-      "lastUpdated": "8/26/2025",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Beverly Elementary",
           "counselors": [
-            "Bosley, Jennie"
+            "TBD"
           ],
           "schoolType": "elementary"
         },
@@ -151,7 +151,6 @@
           "name": "Groves High School",
           "counselors": [
             "Adams, Sharon",
-            "Belsky, Christina",
             "Phillips, Lezah",
             "Starks, Felicia",
             "Wilson, Sherree"
@@ -164,8 +163,7 @@
             "Canfield, Samantha",
             "Golonka, Mary",
             "McWilliams, Nicole",
-            "Vanderveen, Jennifer",
-            "Wolf, Mackenzie"
+            "Vanderveen, Jennifer"
           ],
           "schoolType": "high"
         },
@@ -249,7 +247,7 @@
     {
       "id": "brandon",
       "name": "Brandon",
-      "lastUpdated": "3/27/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Brandon High School",
@@ -276,7 +274,7 @@
         {
           "name": "Oakwood Elementary",
           "counselors": [
-            "Martin, Jill"
+            "TBD"
           ],
           "schoolType": "elementary"
         }
@@ -454,7 +452,7 @@
     {
       "id": "ferndale",
       "name": "Ferndale",
-      "lastUpdated": "1/28/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Ferndale High School",
@@ -483,7 +481,7 @@
           "name": "Ferndale Middle School",
           "counselors": [
             "Castle, Katelyn",
-            "Perry, Geralcine"
+            "Perry, Geraldine"
           ],
           "schoolType": "middle"
         },
@@ -528,14 +526,14 @@
     {
       "id": "holly",
       "name": "Holly",
-      "lastUpdated": "8/19/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Holly High School",
           "counselors": [
             "Carl, Jenny",
-            "Godman, Jody",
-            "Redmer, Kim"
+            "Redmer, Kim",
+            "Schalk, Hannah"
           ],
           "schoolType": "high"
         },
@@ -550,6 +548,7 @@
         {
           "name": "Broncho Virtual",
           "counselors": [
+            "Godman, Jody",
             "Price, Cheryl"
           ],
           "schoolType": "alternative"
@@ -559,13 +558,12 @@
     {
       "id": "huron-valley",
       "name": "Huron Valley",
-      "lastUpdated": "10/27/2025",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Lakeland High School",
           "counselors": [
             "Alfano, Jenny",
-            "Carlson, Nicole",
             "Simms, Heather"
           ],
           "schoolType": "high"
@@ -582,7 +580,7 @@
         {
           "name": "Muir Middle School",
           "counselors": [
-            "Flevaris, Anthony",
+            "Carlson, Nicole",
             "Mah, Jennifer"
           ],
           "schoolType": "middle"
@@ -600,13 +598,13 @@
     {
       "id": "international-academy",
       "name": "International Academy",
-      "lastUpdated": "8/19/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "IA East",
           "counselors": [
             "Bernstein, Whitney",
-            "Phelps, Alexandria"
+            "Jamil, Renee"
           ],
           "schoolType": "alternative"
         },
@@ -631,7 +629,7 @@
     {
       "id": "lake-orion",
       "name": "Lake Orion",
-      "lastUpdated": "8/25/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Lake Orion High School",
@@ -640,14 +638,15 @@
             "Boeneman, Scott",
             "Bruno, Melissa",
             "Novak, Michele",
-            "Parraghi, Natalie"
+            "Parraghi, Natalie",
+            "Patterson, Andrew"
           ],
           "schoolType": "high"
         },
         {
           "name": "Oakview Middle School",
           "counselors": [
-            "TBD"
+            "Mrozowsky, Sarah"
           ],
           "schoolType": "middle"
         },
@@ -707,16 +706,16 @@
     {
       "id": "novi",
       "name": "Novi",
-      "lastUpdated": "3/10/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Novi High School",
           "counselors": [
             "Farmer, Doug",
-            "Keszei, Kathryn",
             "Kilgore, Kevin",
-            "Leve, Lauren",
-            "TBD",
+            "Lephart, Sarah",
+            "Nicholls, Kathryn",
+            "Richter, Charles",
             "Tobis, Andrea"
           ],
           "schoolType": "high"
@@ -724,7 +723,7 @@
         {
           "name": "Novi Middle School",
           "counselors": [
-            "Kilgore, Amy",
+            "Pipkins, Devere",
             "Ultch, Lori"
           ],
           "schoolType": "middle"
@@ -749,12 +748,11 @@
     {
       "id": "oak-park",
       "name": "Oak Park",
-      "lastUpdated": "4/10/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Oak Park High School",
           "counselors": [
-            "Calloway, Amor",
             "Taylor, Sheryl",
             "Winston-McCrary, Tannille"
           ],
@@ -774,12 +772,12 @@
     {
       "id": "oakland-schools",
       "name": "Oakland Schools",
-      "lastUpdated": "8/25/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "OSTC-NE",
           "counselors": [
-            "Maddock, Randy"
+            "TBD"
           ],
           "schoolType": "alternative"
         },
@@ -1099,7 +1097,7 @@
     {
       "id": "south-lyon",
       "name": "South Lyon",
-      "lastUpdated": "8/19/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "South Lyon High School",
@@ -1130,7 +1128,6 @@
         {
           "name": "Millennium Middle School",
           "counselors": [
-            "Bardsley, Diane",
             "Bishop, Bailey",
             "Daniel, Melissa",
             "Gilders, Jason"
@@ -1181,12 +1178,11 @@
     {
       "id": "troy",
       "name": "Troy",
-      "lastUpdated": "8/19/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Baker Middle School",
           "counselors": [
-            "Karaszewski, Crissy",
             "Powell, Suzanne"
           ],
           "schoolType": "middle"
@@ -1220,7 +1216,6 @@
           "counselors": [
             "Ali-Ahmed, Ali",
             "Bigelow, Taylor",
-            "Frendt, Shanna",
             "Hauberg, Emma",
             "Keegan, Tommy",
             "Le, John",
@@ -1234,7 +1229,6 @@
             "Blazoff, Kelsey",
             "Cheyne, Jackie",
             "Grove, Andrea",
-            "Jamil, Renee",
             "Nagi, Hannah",
             "O'Neill, Ann"
           ],
@@ -1316,7 +1310,7 @@
     {
       "id": "waterford",
       "name": "Waterford",
-      "lastUpdated": "9/9/2026",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "Kettering High School",
@@ -1347,8 +1341,7 @@
           "name": "Mason Middle School",
           "counselors": [
             "Mells, David",
-            "Rhein, Kim",
-            "Taplin, Stacy"
+            "Rhein, Kim"
           ],
           "schoolType": "middle"
         },
@@ -1366,7 +1359,7 @@
     {
       "id": "west-bloomfield",
       "name": "West Bloomfield",
-      "lastUpdated": "9/5/2025",
+      "lastUpdated": "9/14/2026",
       "schools": [
         {
           "name": "West Bloomfield High School",
@@ -1375,7 +1368,7 @@
             "Casinelli, Kelly",
             "Essig, Noelle",
             "Hepper, John",
-            "Landon, Kyle",
+            "Mayers-White, Sam",
             "Wegrzynowicz, Joanne"
           ],
           "schoolType": "high"
