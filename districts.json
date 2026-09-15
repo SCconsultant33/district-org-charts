@@ -358,12 +358,13 @@
     {
       "id": "clawson",
       "name": "Clawson",
-      "lastUpdated": "8/25/2026",
+      "lastUpdated": "9/15/2026",
       "schools": [
         {
           "name": "Clawson High School",
           "counselors": [
-            "Capaldi, Ashley"
+            "Capaldi, Ashley",
+            "Valles, Cierra"
           ],
           "schoolType": "high"
         },
