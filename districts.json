@@ -774,12 +774,12 @@
     {
       "id": "oakland-schools",
       "name": "Oakland Schools",
-      "lastUpdated": "9/14/2026",
+      "lastUpdated": "9/15/2026",
       "schools": [
         {
           "name": "OSTC-NE",
           "counselors": [
-            "TBD"
+            "Samora, Jennifer"
           ],
           "schoolType": "alternative"
         },
