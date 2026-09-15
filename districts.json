@@ -247,13 +247,13 @@
     {
       "id": "brandon",
       "name": "Brandon",
-      "lastUpdated": "9/14/2026",
+      "lastUpdated": "9/15/2026",
       "schools": [
         {
           "name": "Brandon High School",
           "counselors": [
             "Eland, Linda",
-            "TBD"
+            "Googasian, George"
           ],
           "schoolType": "high"
         },
@@ -1247,7 +1247,7 @@
     {
       "id": "walled-lake",
       "name": "Walled Lake",
-      "lastUpdated": "3/12/2026",
+      "lastUpdated": "9/15/2026",
       "schools": [
         {
           "name": "Walled Lake Central High School",
@@ -1292,7 +1292,7 @@
           "name": "Smart Middle School",
           "counselors": [
             "Braley, Julie",
-            "Bratke, Maureen",
+            "Henning, Colton",
             "Hoover, Kathleen"
           ],
           "schoolType": "middle"
