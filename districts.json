@@ -283,7 +283,7 @@
     {
       "id": "clarenceville",
       "name": "Clarenceville",
-      "lastUpdated": "9/5/2023",
+      "lastUpdated": "9/15/2026",
       "schools": [
         {
           "name": "Clarenceville High School",
@@ -296,7 +296,7 @@
         {
           "name": "Clarenceville Middle School",
           "counselors": [
-            "Westor, Jennifer"
+            "Weston, Jennifer"
           ],
           "schoolType": "middle"
         }
