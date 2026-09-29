@@ -1312,7 +1312,7 @@
     {
       "id": "waterford",
       "name": "Waterford",
-      "lastUpdated": "9/14/2026",
+      "lastUpdated": "9/29/2026",
       "schools": [
         {
           "name": "Kettering High School",
@@ -1342,6 +1342,7 @@
         {
           "name": "Mason Middle School",
           "counselors": [
+            "Hoffman, Laura",
             "Mells, David",
             "Rhein, Kim"
           ],
@@ -1350,6 +1351,7 @@
         {
           "name": "Pierce Middle School",
           "counselors": [
+            "Hoffman, Laura",
             "Noble-Farmiloe, Annette",
             "Tunnicliff, Jeff"
           ],
