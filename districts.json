@@ -768,6 +768,13 @@
             "Williams, Erin"
           ],
           "schoolType": "middle"
+        },
+        {
+          "name": "NOVA Academy",
+          "counselors": [
+            "Stevenson, Walter"
+          ],
+          "schoolType": "alternative"
         }
       ]
     },
