@@ -1073,15 +1073,15 @@
     {
       "id": "royal-oak",
       "name": "Royal Oak",
-      "lastUpdated": "8/25/2026",
+      "lastUpdated": "10/29/2026",
       "schools": [
         {
           "name": "Royal Oak High School",
           "counselors": [
             "Beerer, Chloe",
-            "Boedeker, Erin",
             "Stys, Abbie",
-            "Szymanski, Noah"
+            "Szymanski, Noah",
+            "TBD"
           ],
           "schoolType": "high"
         },
@@ -1369,7 +1369,7 @@
     {
       "id": "west-bloomfield",
       "name": "West Bloomfield",
-      "lastUpdated": "9/14/2026",
+      "lastUpdated": "10/29/2026",
       "schools": [
         {
           "name": "West Bloomfield High School",
@@ -1386,7 +1386,7 @@
         {
           "name": "Oakland Early College",
           "counselors": [
-            "Bellairs, Carly"
+            "Boedeker, Erin"
           ],
           "schoolType": "alternative"
         },
